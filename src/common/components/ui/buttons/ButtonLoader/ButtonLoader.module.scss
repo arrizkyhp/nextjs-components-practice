@@ -1,0 +1,72 @@
+.button {
+  transform: translateZ(0);
+
+  @apply flex items-center justify-center gap-3 
+  relative overflow-hidden
+  w-[200px] h-[64px]
+  text-lg text-left font-medium
+  rounded-[10px]
+  bg-[#ef4169] text-[#f9f9f9]
+  cursor-pointer
+  
+  before:content-[""] before:absolute
+  before:top-0 before:left-[-100%]
+  before:w-[300%] before:h-full
+  before:opacity-0
+  before:transition-opacity before:duration-[0.25s]
+  before:z-10
+  
+  after:content-[""] after:absolute
+  after:top-0 after:left-[-100%]
+  after:w-[300%] after:h-full
+  after:opacity-0
+  after:transition-opacity after:duration-[0.25s]
+  after:z-20;
+
+  &:before {
+    background: #ef4169
+      repeating-linear-gradient(
+        60deg,
+        transparent,
+        transparent 10px,
+        #d7385c 10px,
+        #d7385c 20px
+      );
+  }
+
+  &:after {
+    background: linear-gradient(transparent, #ef4169 90%);
+  }
+
+  svg,
+  span {
+    @apply relative z-30;
+  }
+
+  &.loading {
+    @apply before:opacity-100 after:opacity-100;
+  }
+
+  &.loading:before {
+    animation: loading 0.7s infinite linear;
+  }
+
+  &.loading svg {
+    animation: spin 1s infinite linear;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(25px);
+  }
+  100% {
+    transform: translateX(-20px);
+  }
+}
+
+@keyframes spin {
+  100% {
+    rotate: 1turn;
+  }
+}

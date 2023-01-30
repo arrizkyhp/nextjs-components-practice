@@ -16,7 +16,11 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+      "~/constants/*": ["./src/common/constants/*"],
+      "~/icons/*": ["./src/common/components/icons/*"],
+      "~/layouts/*": ["./src/common/components/layout/*"],
       "~/styles/*": ["./src/common/styles/*"],
+      "~/types/*": ["src/common/models/types/*"],
       "~/ui/*": ["./src/common/components/ui/*"]
     }
   },
