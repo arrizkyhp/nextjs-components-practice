@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
-import style from './ButtonLoader.module.scss';
 import { TWO_SEC } from '~/constants/.';
 import { GearIcon } from '~/icons/.';
+
+import style from './ButtonLoader.module.scss';
 
 const ButtonLoader = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
